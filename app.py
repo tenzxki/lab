@@ -15,6 +15,8 @@ def get_db():
 def forside():
     return render_template("forside.html")
 
+
+
 @app.route("/bruker/<navn>")  # Øvelse 12 – route med parameter
 def bruker(navn):
     conn = get_db()
@@ -22,7 +24,12 @@ def bruker(navn):
     cursor.execute("SELECT brukernavn FROM brukere WHERE brukernavn = %s", (navn,))
     resultat = cursor.fetchone()
     conn.close()
-    return render_template("bruker.html", navn=resultat["brukernavn"] if resultat else None)
+    if resultat:
+        navn = resultat["brukernavn"]
+    else:
+        navn = None
+    return render_template("bruker.html", navn=navn)
+
 
 @app.route("/brukere")  # Øvelse 20 – hent data fra databasen og vis på nettsiden
 def brukere():
@@ -32,6 +39,7 @@ def brukere():
     alle = cursor.fetchall()
     conn.close()
     return render_template("brukere.html", brukere=alle)  # Øvelse 15 – send variabel til template
+
 
 @app.route("/registrer", methods=["GET", "POST"]) 
 def registrer():
@@ -47,6 +55,7 @@ def registrer():
         conn.close()
         melding = f"Bruker '{brukernavn}' ble registrert!"
     return render_template("registrer.html", melding=melding)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -48,4 +48,7 @@ Python sender en sql spørring og får rader tilbake. Radene lagres i en variabe
 Commit() lagrer endringer i databasen.
 
 Øvelse 23:
+Commit lagrer et snapshot av endringene loaklt med en melding. Push sender de lokale commits til eksternt repository.
+
+
 
