@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="no">
+<head><meta charset="UTF-8"><title>Registrer</title></head>
+<body>
+  <h1>Registrer ny bruker</h1>
+  <form method="POST">
+    <label>Brukernavn:</label><br>
+    <input type="text" name="brukernavn"><br><br>
+    <label>Passord:</label><br>
+    <input type="password" name="passord"><br><br>
+    <button type="submit">Registrer</button>
+  </form>
+  {% if melding %}
+    <p><strong>{{ melding }}</strong></p>
+  {% endif %}
+  <a href="/brukere">Se alle brukere</a> |
+  <a href="/">Tilbake</a>
+</body>
+</html>

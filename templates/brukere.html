@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="no">
+<head><meta charset="UTF-8"><title>Brukere</title></head>
+<body>
+  <h1>Alle brukere</h1>
+  {% for b in brukere %}<!-- Øvelse 16 – loop i Jinja2 -->
+    <p>{{ b["brukernavn"] }}</p>
+  {% endfor %}
+  {% if not brukere %}
+    <p>Ingen brukere registrert ennå.</p>
+  {% endif %}
+  <br>
+  <a href="/registrer">Registrer ny bruker</a> |
+  <a href="/">Tilbake</a>
+</body>
+</html>

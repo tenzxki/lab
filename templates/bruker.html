@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="no">
+<head><meta charset="UTF-8"><title>Brukerprofil</title></head>
+<body>
+  {% if navn %}
+    <h1>Hei, {{ navn }}!</h1>
+    {% if navn == "admin" %}<!-- Øvelse 17 – if-setning -->
+      <p>Du er administrator.</p>
+    {% else %}
+      <p>Du er en vanlig bruker.</p>
+    {% endif %}
+  {% else %}
+    <h1>Bruker ikke funnet.</h1>
+  {% endif %}
+  <a href="/">Tilbake</a>
+</body>
+</html>
