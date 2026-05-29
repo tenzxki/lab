@@ -1,6 +1,7 @@
 # LAB Checkoff øvelser
 
 Del 1 
+
 1.
 ssh brukes til kommunikasjon mellom systemer. Kommunikasjonen er sikker og kryptert. Brukt for sikker fjernadministrasjon på tvers av alle typer nettverk. 
 
@@ -36,3 +37,15 @@ SELECT * FROM brukere
 
 10.
 WHERE brukes for å filtrere rader i en SELECT, UPDATE eller DELETE. Bare de radene som oppfyller en betingelse påvirkes eller returneres. Eksempel SELECT * FROM brukere WHERE id = 1
+
+Øvelse 13:
+GET henter data parametre i URL. POST sender/oppdaterer data.
+
+Øvelse 18:
+Python sender en sql spørring og får rader tilbake. Radene lagres i en variabel og sendes til html via render_template(). Jinja2 tar imot variabelen og viser veridene med {{ }}
+
+Øvelse 22:
+Commit() lagrer endringer i databasen.
+
+Øvelse 23:
+
